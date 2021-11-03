@@ -100,3 +100,64 @@ console.log(moveToZero([1, true, "Hi", 5]))//without zero
 console.log(moveToZero([0, 0, true, 0, 0, "Hi", 5, 0, 0]))// with zero
 //  ends here
 // ****************************************
+
+
+//01/11/2021
+// 6. Outliner
+console.log('You are given an array (which will have a length of at least 3, but could be very large) containing integers. The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. Write a method that takes the array as an argument and returns this "outlier" N.')
+
+const outliner = (arr) => {
+    odd = [];
+    even = [];
+    arr.map((item) => {
+        if (item % 2 == 0) {
+            even.push(item)
+        } else {
+            odd.push(item)
+        }
+    })
+
+    if (even.length < odd.length) {
+        return even
+    } else {
+        return odd
+    }
+}
+
+console.log(outliner([2, 4, 100, 4, 11, 2602, 36]))
+console.log(outliner([160, 3, 1719, 19, 11, 13, -21]))
+//Outliner ends here
+
+
+//02/11/2021
+// 7.Sort and print
+console.log('7.Given an array of numbers, return the highest number that can be made out of it.')
+
+const array = (arr) => {
+    let str = ''
+    let sort = arr.sort().reverse()
+    for (let i = 0; i < sort.length; i++) {
+        str = str + sort[i]
+    }
+    return str
+
+}
+
+console.log(array([3, 6, 0, 9]))
+console.log(array([1, 34, 3, 98, 9, 76, 45, 4]))
+
+//Sort ends here
+
+//03/11/2021
+// 8.Find Vowels and print the length of it
+console.log('8.Write a JavaScript function that accepts a string as a parameter and counts and returns the number of vowels within the string.')
+
+const vowels = (str) => {
+    let x = str.match(/[aeiou]/gi).length
+    return x
+}
+
+console.log(vowels('Javascript Programmer'))
+console.log(vowels('Developer'))
+
+//Ends here
