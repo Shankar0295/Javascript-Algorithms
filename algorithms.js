@@ -161,3 +161,55 @@ console.log(vowels('Javascript Programmer'))
 console.log(vowels('Developer'))
 
 //Ends here
+
+
+//04/11/2021
+// 9. Print nos from 1 to 100, print Fizz for multiples of 3 and print 5 for multiples of 5
+console.log('9. Write a program that prints the numbers from 1 to 100 and for multiples of ‘3’ print “Fizz” instead of the number and for the multiples of ‘5’ print “Buzz”.')
+
+let n = 100;
+let arr = [];
+const printFn = () => {
+    for (let i = 0; i <= n; i++) {
+        arr.push(i)
+    }
+    console.log(arr)
+    const x = arr.map((item) => {
+        if (item % 3 === 0) {
+            return 'Fizz'
+        } else if (item % 5 === 0) {
+            return 'Buzz'
+        } else {
+            return item
+        }
+    })
+    console.log(x)
+}
+
+console.log(printFn())
+
+//Ends here
+
+
+//05/11/2021
+// 10. Find the second largest number in an array.
+
+console.log('10. Find the second largest number in an array.')
+
+const largerstNos = (arr) => {
+    let x = Math.max(...arr)//for finding max
+    let y = arr.filter((item) => item != x)// for filtering max
+    if (y == '') {// if no largest is available
+        return "No Second largest available"
+    } else {// for finding second largest
+        let z = Math.max(...y)
+        return z
+    }
+
+}
+
+console.log(largerstNos(['20', '120', '111', '215', '54', '78']))
+console.log(largerstNos(['100', '500', '678', '800', '400', '900']))
+console.log(largerstNos(['10', '10', '10']))
+
+//ends here
