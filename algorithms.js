@@ -213,3 +213,91 @@ console.log(largerstNos(['100', '500', '678', '800', '400', '900']))
 console.log(largerstNos(['10', '10', '10']))
 
 //ends here
+
+
+//09/11/2021
+// 12.Create a function that takes two numbers as arguments (num, length) and returns an array of multiples of num until the array length reaches length.
+console.log('12.Create a function that takes two numbers as arguments (num, length) and returns an array of multiples of num until the array length reaches length.')
+
+const arrayOfMultiples = (num, length) => {
+    let arr = [];
+    let y
+    for (let i = 1; i <= length; i++) {
+        arr.push(num * i)
+    }
+    return arr
+}
+
+arrayOfMultiples(7, 5)
+arrayOfMultiples(12, 10)
+arrayOfMultiples(17, 6)
+
+// ends here
+
+// 10/11/2021
+// 13. Create a function that, given an array similar to the above, sorts the array according to the "content of the elements
+console.log('13.Create a function that, given an array similar to the above, sorts the array according to the "content of the elements".')
+
+const sortIt = (arr) => {
+    let y = arr.sort();
+    return y
+}
+
+sortIt([4, 1, 3])
+sortIt([[4], [1], [3]])
+sortIt([4, [1], 3])
+sortIt([[4], 1, [3]])
+sortIt([[3], 4, [2], [5], 1, 6])
+// ends here
+
+// 11/11/2021
+// 14.Create a function that takes two numbers and a mathematical operator + - / * and will perform a calculation with the given numbers.
+console.log('14.Create a function that takes two numbers and a mathematical operator + - / * and will perform a calculation with the given numbers.')
+
+
+const calculator = (a, b, c) => {
+    if (c == 0) {
+        return "Can't divide by 0!"
+    } else if (b == '+') {
+        return a + c
+    } else if (b == '-') {
+        return a - c
+    } else if (b == '*') {
+        return a * c
+    } else if (b == '/') {
+        return a / c
+    }
+
+}
+
+calculator(2, "+", 2)
+
+calculator(4, "-", 2)
+
+calculator(2, "*", 2)
+
+calculator(4, "/", 2)
+
+calculator(4, "/", 0)
+// ends here
+
+//12/11/2021
+// 15. 'An array is special if every even index contains an even number and every odd index contains an odd number. Create a function that returns true if an array is special, and false otherwise.'
+console.log('An array is special if every even index contains an even number and every odd index contains an odd number. Create a function that returns true if an array is special, and false otherwise.')
+
+const isSpecial = (arr) => {
+    console.log(arr)
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 !== i % 2) {
+            return false
+        }
+    }
+    return true
+}
+
+isSpecial([2, 7, 4, 9, 6, 1, 6, 3])
+isSpecial([2, 7, 9, 1, 6, 1, 6, 3])
+isSpecial([2, 7, 8, 8, 6, 1, 6, 3])
+
+//ends here
+
