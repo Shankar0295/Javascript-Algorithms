@@ -214,6 +214,27 @@ console.log(largerstNos(['10', '10', '10']))
 
 //ends here
 
+//08/11/2021
+// 11.Create a function that takes the age in years and returns the age in days.
+console.log('11.Create a function that takes the age in years and returns the age in days.')
+
+const ageCalc = (age) => {
+    let date = new Date()//get current date
+    let year = date.getFullYear();//get current year
+    let birthYear = (year - age)//get diff in year between current year and age
+    let leapDays = age / 4// get leap days between current year and birthyear
+    let leapDaysRounded = Math.ceil(leapDays)// round off leap days
+    let Days = (year - birthYear) * 365// get age in days
+    let ageInDays = Days + leapDaysRounded// add days and leapdays
+    return "You are" + ' ' + ageInDays + " days old"
+
+}
+
+ageCalc(65)
+ageCalc(0)
+ageCalc(20)
+ageCalc(27)
+// ends here
 
 //09/11/2021
 // 12.Create a function that takes two numbers as arguments (num, length) and returns an array of multiples of num until the array length reaches length.
