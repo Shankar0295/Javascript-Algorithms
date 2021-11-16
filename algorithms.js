@@ -217,7 +217,7 @@ console.log(largerstNos(['10', '10', '10']))
 //08/11/2021
 // 11.Create a function that takes the age in years and returns the age in days.
 console.log('11.Create a function that takes the age in years and returns the age in days.')
-
+//Solution 1
 const ageCalc = (age) => {
     let date = new Date()//get current date
     let year = date.getFullYear();//get current year
@@ -228,6 +228,13 @@ const ageCalc = (age) => {
     let ageInDays = Days + leapDaysRounded// add days and leapdays
     return "You are" + ' ' + ageInDays + " days old"
 
+}
+
+//Solution 2 by akka
+const calcAge = (age) => {
+    let gettingLeapDays = Math.ceil(age / 4);
+    let gettingAgeinDays = (age * 365) + gettingLeapDays
+    return gettingAgeinDays
 }
 
 ageCalc(65)
