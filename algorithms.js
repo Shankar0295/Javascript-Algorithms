@@ -322,3 +322,33 @@ isSpecial([2, 7, 8, 8, 6, 1, 6, 3])
 
 //ends here
 
+// 16/11/2021
+// '18.Write a function that converts an object into an array of keys and values.'
+
+console.log('18.Write a function that converts an object into an array of keys and values.')
+const objToArr = (obj) => {
+    return (Object.entries(obj))
+}
+
+objectToArray({ D: 1, B: 2, C: 3 })
+objectToArray({ likes: 2, dislikes: 3, followers: 10 })
+//ends here
+
+// 16/11/2021
+// 19."Create a function that takes a country\'s name and its area as arguments and returns the area of the country\'s proportion of the total world\'s landmass. The total world\'s landmass is 148,940,000'
+console.log('19."Create a function that takes a country\'s name and its area as arguments and returns the area of the country\'s proportion of the total world\'s landmass. The total world\'s landmass is 148,940,000')
+
+const areaOfCountry = (name, area) => {
+    const totalLandMass = 148940000
+    let countryPercentage = (area / totalLandMass) * 100
+    let occPercentage = countryPercentage.toFixed(2)
+    let x = name + " " + "is" + " " + occPercentage + "% " + "of the total world\'s landmass"
+    return x
+}
+
+areaOfCountry("Russia", 17098242);
+areaOfCountry("USA", 9372610);
+areaOfCountry("Iran", 1648195);
+
+//ends here
+
