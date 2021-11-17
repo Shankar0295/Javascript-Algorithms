@@ -329,6 +329,42 @@ isSpecial([2, 7, 8, 8, 6, 1, 6, 3])
 
 //ends here
 
+// 15/11/2021
+// '16.Arrays can be mixed with various types. Your task for this challenge is to sum all the number elements in the given array. Create a function that takes an array and returns the sum of all numbers in the array.'
+console.log('16.Arrays can be mixed with various types. Your task for this challenge is to sum all the number elements in the given array. Create a function that takes an array and returns the sum of all numbers in the array.')
+
+const numbersSum = (arr) => {
+    // console.log(arr)
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof (arr[i]) == 'number') {
+            count += arr[i]
+        }
+    }
+    return count
+}
+
+numbersSum([1, 2, "13", "4", "645"]) // 3
+
+numbersSum([true, false, "123", "75"]) //0
+
+numbersSum([1, 2, 3, 4, 5, true]) //15
+
+//ends here
+
+// 15/11/2021
+// '17.A tetrahedron is a pyramid with a triangular base and three sides. A tetrahedral number is a number of items within a tetrahedron. Create a function that takes an integer n and returns the nth tetrahedral number.'
+console.log('17.A tetrahedron is a pyramid with a triangular base and three sides. A tetrahedral number is a number of items within a tetrahedron. Create a function that takes an integer n and returns the nth tetrahedral number.')
+
+const tetra = (num) => {
+    return ((num * (num + 1) * (num + 2)) / 6)//formula for nth tetrahedron number
+}
+
+tetra(2)
+tetra(5)
+tetra(6)
+//ends here
+
 // 16/11/2021
 // '18.Write a function that converts an object into an array of keys and values.'
 
@@ -356,6 +392,22 @@ const areaOfCountry = (name, area) => {
 areaOfCountry("Russia", 17098242);
 areaOfCountry("USA", 9372610);
 areaOfCountry("Iran", 1648195);
+
+//ends here
+
+// 17/11/2021
+// 20."Create a function that will return an integer number corresponding to the amount of digits in the given integer"
+console.log('20."Create a function that will return an integer number corresponding to the amount of digits in the given integer')
+
+const num_of_digits = (num) => {
+    let x = num.toString().split("")
+    return x.length
+}
+
+num_of_digits(1000)
+num_of_digits(12)
+num_of_digits(1305981031)
+num_of_digits(0)
 
 //ends here
 
