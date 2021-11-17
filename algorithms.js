@@ -411,3 +411,25 @@ num_of_digits(0)
 
 //ends here
 
+// 17/11/2021
+// 21.Create a function which counts how many lone 1s appear in a given number. Lone means the number doesn't appear twice or more in a row.'
+console.log('21.Create a function which counts how many lone 1s appear in a given number. Lone means the number doesn\'t appear twice or more in a row.')
+
+const countLoneOnes = (num) => {
+    let count = 0;
+    let arr = num.toString().split("")
+    for (let i = 0; i < arr.length; i++) {
+        if (arr.includes('1') && arr[i - 1] !== '1' && arr[i + 1] !== '1') {
+            count += 1
+        }
+    }
+    return count;
+}
+
+countLoneOnes(101) //2
+countLoneOnes(1191) //1
+countLoneOnes(1111) //0
+countLoneOnes(462) //0
+
+//ends here
+
