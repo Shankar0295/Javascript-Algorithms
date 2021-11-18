@@ -284,17 +284,12 @@ console.log('14.Create a function that takes two numbers and a mathematical oper
 
 
 const calculator = (a, b, c) => {
-    if (c == 0) {
-        return "Can't divide by 0!"
-    } else if (b == '+') {
-        return a + c
-    } else if (b == '-') {
-        return a - c
-    } else if (b == '*') {
-        return a * c
-    } else if (b == '/') {
-        return a / c
-    }
+    if (c == 0 && b == '/') return "Can't divide by 0!"
+    if (b == '+') return a + c
+    if (b == '-') return a - c
+    if (b == '*') return a * c
+    if (b == '/') return a / c
+
 
 }
 
