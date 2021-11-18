@@ -433,3 +433,40 @@ countLoneOnes(462) //0
 
 //ends here
 
+// 18/11/2021
+// 22.Create a function that takes an array of numbers and return "Boom!" if the digit 7 appears in the array. Otherwise, return "there is no 7 in the array".
+console.log('22.Create a function that takes an array of numbers and return "Boom!" if the digit 7 appears in the array. Otherwise, return "there is no 7 in the array".')
+
+const sevenBoom = (arr) => {
+    let x = arr.toString().split("")
+    let y = (x.includes('7')) ? "Boom!" : "There is no 7 in the array"
+    return y
+}
+
+sevenBoom([1, 2, 3, 4, 5, 6, 7]) // 'Boom!'
+sevenBoom([2, 55, 60, 97, 86]) // 'Boom!'
+sevenBoom([8, 6, 33, 100]) // "There is no 7 in the array" 
+
+//ends here
+
+// 18/11/2021
+// '23.Create a function that determines whether a number is Oddish or Evenish. A number is Oddish if the sum of all of its digits is odd, and a number is Evenish if the sum of all of its digits is even. If a number is Oddish, return "Oddish". Otherwise, return "Evenish".'
+console.log('23.Create a function that determines whether a number is Oddish or Evenish. A number is Oddish if the sum of all of its digits is odd, and a number is Evenish if the sum of all of its digits is even. If a number is Oddish, return "Oddish". Otherwise, return "Evenish".')
+
+const oddishOrEvenish = (num) => {
+    let x = num.toString().split("")
+    const oddEven = x.map((item) => parseInt(item))
+        .reduce((acc, value) => {
+            let total = acc + value
+            return total
+        }, 0)
+    let z = (oddEven % 2 == 0) ? "Evenish" : "Oddish"
+    return z
+
+}
+
+oddishOrEvenish(43) // "Oddish"
+oddishOrEvenish(373) // 'Oddish'
+oddishOrEvenish(4433) // 'Evenish'
+
+//ends here
