@@ -475,13 +475,13 @@ const countDigits = (num, digit) => {
     let count = 0;
     let d = digit.toString()
     for (let i = 0; i <= num; i++) {
-        let x = (i * i).toString().split('')
+        let x = (i * i)
         arr.push(x)
     }
 
     arr = arr.toString().split('')
     console.log(arr)
-    const z = arr.map((item, index) => {
+    const z = arr.map((item) => {
         if (item.includes(d)) {
             count += 1
         }
