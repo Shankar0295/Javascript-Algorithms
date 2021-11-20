@@ -465,3 +465,47 @@ oddishOrEvenish(373) // 'Oddish'
 oddishOrEvenish(4433) // 'Evenish'
 
 //ends here
+
+// 19/11/2021
+// 24.You have to create a function that takes two integers n and d and makes an array of squares of all numbers from 0...<= n and returns the count of the digits d in the array.
+console.log('24.You have to create a function that takes two integers n and d and makes an array of squares of all numbers from 0...<= n and returns the count of the digits d in the array.')
+
+const countDigits = (num, digit) => {
+    let arr = []
+    let count = 0;
+    let d = digit.toString()
+    for (let i = 0; i <= num; i++) {
+        let x = (i * i).toString().split('')
+        arr.push(x)
+    }
+
+    arr = arr.toString().split('')
+    console.log(arr)
+    const z = arr.map((item, index) => {
+        if (item.includes(d)) {
+            count += 1
+        }
+    })
+    return count
+}
+
+countDigits(25, 2) // 9
+countDigits(10, 1) // 4
+
+//ends here
+
+// 19/11/2021
+// 25.Create a function that takes in a number as a string `n` and returns the number without trailing and leading zeros.
+console.log('25.Create a function that takes in a number as a string `n` and returns the number without trailing and leading zeros.')
+
+const removeLeadingTrailing = (str) => {
+    let num = parseFloat(str);
+    return num.toString()
+}
+removeLeadingTrailing("230.000") // "230"
+removeLeadingTrailing("00402") // "402"
+removeLeadingTrailing("03.1400") // "3.14"
+removeLeadingTrailing("30") // "30"
+removeLeadingTrailing("4.0") // "4"
+//ends here
+
