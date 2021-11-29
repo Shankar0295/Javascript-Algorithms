@@ -130,21 +130,23 @@ console.log(outliner([160, 3, 1719, 19, 11, 13, -21]))
 
 
 //02/11/2021
-// 7.Sort and print
+// 7.Sort and return the highest number that can be made out of it
 console.log('7.Given an array of numbers, return the highest number that can be made out of it.')
 
 const array = (arr) => {
     let str = ''
     let sort = arr.sort().reverse()
-    for (let i = 0; i < sort.length; i++) {
-        str = str + sort[i]
+    for (let i = 0; i < sort.length - 1; i += 2) {
+        let ab = `${sort[i]}${sort[i + 1]}`
+        let ba = `${sort[i + 1]}${sort[i]}`
+        const result = (parseInt(ab) > parseInt(ba)) ? str += ab : str += ba
     }
-    return str
+    return parseInt(str)
 
 }
 
-console.log(array([3, 6, 0, 9]))
-console.log(array([1, 34, 3, 98, 9, 76, 45, 4]))
+array([3, 6, 0, 9])// 9630
+array([1, 34, 3, 98, 9, 76, 45, 4])//998764543431
 
 //Sort ends here
 
