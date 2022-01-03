@@ -191,7 +191,7 @@ const printFn = () => {
             return item
         }
     })
-    console.log(x)
+    return x
 }
 
 console.log(printFn())
