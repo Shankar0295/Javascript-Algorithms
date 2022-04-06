@@ -50,12 +50,11 @@ console.log(ciperText("JavaScript13"))
 console.log("Move the first letter of each word to the end of it, then add 'ay' to the end of the word. Leave punctuation marks untouched.")
 
 const pigIt = (str) => {
-    let x = str.split(" ");
-    let word = x.map((item) => {
-        return item.match(/[A-z]/i) ? `${item.substring(1)}${item.substring(0, 1)}` + "ay" : item
+    str = str.split(" ")
+    const res = str.map((item) => {
+        return item.match(/[A-z]/gi) ? `${item.substr(1)}${item.substr(0, 1)}ay` : item
     })
-    console.log(word)
-
+    return res
 }
 
 pigIt("Hello World !")
@@ -71,7 +70,7 @@ console.log('A pangram is a sentence that contains every single letter of the al
 const pangram = (str) => {
     let x = str.match(/[a-z]/gi)
     const alphabet = [...new Set(x)]//To filter duplicates
-    return (alphabet.length - 1) === 26;
+    return (alphabet.length >= 26) ? true : false
 }
 
 console.log(pangram("The quick brown fox jumps over the lazy dog"))
@@ -93,6 +92,13 @@ const moveToZero = (arr) => {
     })
     let y = arr.filter(item => item !== 0)
     return y.concat(newArray)
+}
+
+//Method 2
+const moveToZero = (arr) => {
+    let x = arr.filter(item => item === 0)
+    let y = arr.filter(item => item !== 0)
+    return [...y, ...x]
 }
 
 console.log(moveToZero([0, 0, 1, true, "Hi", 0, 3, 0, 5]))//with zero
@@ -190,6 +196,23 @@ const printFn = () => {
 
 console.log(printFn())
 
+//Method 2
+const printFn = () => {
+    const arr = Array.from(Array(100).keys())
+    const x = arr.map((item) => {
+        if (item % 3 === 0) {
+            return 'Fizz'
+        } else if (item % 5 === 0) {
+            return 'Buzz'
+        } else {
+            return item
+        }
+    })
+    return x
+}
+
+printFn()
+
 //Ends here
 
 
@@ -208,6 +231,13 @@ const largerstNos = (arr) => {
         return z
     }
 
+}
+
+//Method 2
+const largerstNos = (arr) => {
+    const first = Math.max(...arr)
+    const filter = arr.filter(item => item !== first.toString())
+    return (filter == '') ? 'No Second Largest' : Math.max(...filter)
 }
 
 console.log(largerstNos(['20', '120', '111', '215', '54', '78']))
@@ -251,7 +281,6 @@ console.log('12.Create a function that takes two numbers as arguments (num, leng
 
 const arrayOfMultiples = (num, length) => {
     let arr = [];
-    let y
     for (let i = 1; i <= length; i++) {
         arr.push(num * i)
     }
