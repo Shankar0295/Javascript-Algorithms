@@ -370,6 +370,17 @@ const numbersSum = (arr) => {
     return count
 }
 
+//Method 2
+const numbersSum = (arr) => {
+    const res = arr.reduce((acc, item) => {
+        if (typeof item == 'number') {
+            acc += item
+        }
+        return acc
+    }, 0)
+    return res
+}
+
 numbersSum([1, 2, "13", "4", "645"]) // 3
 
 numbersSum([true, false, "123", "75"]) //0
@@ -395,7 +406,7 @@ tetra(6)
 // '18.Write a function that converts an object into an array of keys and values.'
 
 console.log('18.Write a function that converts an object into an array of keys and values.')
-const objToArr = (obj) => {
+const objectToArray = (obj) => {
     return (Object.entries(obj))
 }
 
