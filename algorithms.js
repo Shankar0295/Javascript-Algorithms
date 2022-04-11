@@ -525,6 +525,12 @@ const countDigits = (num, digit) => {
     })
     return count
 }
+//Refactored on 11/04/22
+let digit = d.toString()
+const arr = Array.from(new Array(n), (x, i) => (i + 1) * (i + 1))
+const result = arr.toString().split('')
+const ones = result.filter((item) => item == digit)
+return ones.length
 
 countDigits(25, 2) // 9
 countDigits(10, 1) // 4
@@ -538,6 +544,11 @@ console.log('25.Create a function that takes in a number as a string `n` and ret
 const removeLeadingTrailing = (str) => {
     let num = parseFloat(str);
     return num.toString()
+}
+
+//Refactored on 11/04/22
+const removeLeadingTrailing = (str) => {
+    return parseFloat(str)
 }
 removeLeadingTrailing("230.000") // "230"
 removeLeadingTrailing("00402") // "402"
