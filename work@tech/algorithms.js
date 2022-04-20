@@ -48,3 +48,48 @@ const Maxnum = (arr) => {
     return (decider % 2 == 0) ? 'WON' : 'LOST'
 }
 Maxnum([12, 45, 234, 5674, 122])
+
+const avgWeight = (arr) => {
+    const result = arr.reduce((acc, item) => {
+        return acc += item
+    }, 0)
+    return result
+}
+avgWeight([40.75, 45.2, 55.3, 49.5, 43.3, 54.1, 38.4, 63.8, 45.2, 58.25])
+
+
+const oddEven = (arr) => {
+    const res = arr.map((item) => {
+        if (item % 2 == 0) {
+            return "EVEN"
+        } else {
+            return "ODD"
+        }
+    })
+    return res
+}
+oddEven([23, 12, 44, 32])
+
+const fibonacci = (num) => {
+    let n1 = 0;
+    let n2 = 1;
+    let next_num = 0;
+    let arr = []
+    if (num >= 1) {
+        for (let i = 1; i < num - 1; i++) {
+            next_num = n1 + n2;
+            n1 = n2;
+            n2 = next_num;
+            arr.push(next_num)
+        }
+        return [0, 1, ...arr]
+    } else {
+        return 0
+    }
+
+}
+fibonacci(8)
+fibonacci(2)
+fibonacci(1)
+fibonacci(5)
+fibonacci(10)
