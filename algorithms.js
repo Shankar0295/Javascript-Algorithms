@@ -353,6 +353,19 @@ isSpecial([2, 7, 4, 9, 6, 1, 6, 3])
 isSpecial([2, 7, 9, 1, 6, 1, 6, 3])
 isSpecial([2, 7, 8, 8, 6, 1, 6, 3])
 
+//isSpecialarray alternate method
+const isSpecialArray = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 !== i % 2) {
+            return false
+        }
+    }
+    return true
+}
+isSpecialArray([2, 7, 4, 9, 6, 1, 6, 3])// true
+isSpecialArray([2, 7, 9, 1, 6, 1, 6, 3]) // false
+isSpecialArray([2, 7, 8, 8, 6, 1, 6, 3]) // false
+
 //ends here
 
 // 15/11/2021
@@ -370,7 +383,21 @@ const numbersSum = (arr) => {
     return count
 }
 
-//Method 2
+// Method 2
+const numbersSum = (arr) => {
+    const number = arr.filter((item) => {
+        return typeof (item) == 'number'
+    }).reduce((acc, item) => {
+        return acc += item
+    }, 0)
+    return number
+}
+
+numbersSum([1, 2, "13", "4", "645"]) // 3
+numbersSum([true, false, "123", "75"]) // 0
+numbersSum([1, 2, 3, 4, 5, true]) // 15
+
+//Method 3
 const numbersSum = (arr) => {
     const res = arr.reduce((acc, item) => {
         if (typeof item == 'number') {

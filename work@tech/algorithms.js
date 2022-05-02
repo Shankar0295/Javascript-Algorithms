@@ -93,3 +93,42 @@ fibonacci(2)
 fibonacci(1)
 fibonacci(5)
 fibonacci(10)
+
+'Given a two-digit number n, print both the digits of the number.'
+
+const twoDigitNum = (num) => {
+    return num.toString().split('')
+}
+
+twoDigitNum(34)
+twoDigitNum(45)
+
+const divisibleBy6 = (num) => {
+    if (num % 66 == 0) return 'True'
+    else return 'False'
+}
+divisibleBy6(457)
+divisibleBy6(66)
+divisibleBy6(0)
+divisibleBy6(40)
+
+//Convert tempeature to farenheit
+const tempToFheit = (num) => {
+    const converter = (9 * num / 5) + 32
+    return converter.toFixed(2)
+}
+
+tempToFheit(34.52)
+tempToFheit(12)
+
+//Seven up and down
+const sevenUpDown = (num) => {
+    if (num > 7) { return "UP" }
+    else if (num == 7) { return "EQUAL" }
+    else { return "DOWN" }
+}
+
+sevenUpDown(12)
+sevenUpDown(7)
+sevenUpDown(45)
+
