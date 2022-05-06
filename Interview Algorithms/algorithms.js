@@ -219,3 +219,35 @@ hastaggenerator("    Hello     World   ") // "#HelloWorld"
 hastaggenerator("")
 hastaggenerator("Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong Cat")
 hastaggenerator("#Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+
+//Object flattening && recursion
+const obj = {
+    name: "test",
+    address: {
+        personal: {
+            building: ['perosnal', 'persnal2'],
+            street: 'personal street',
+            personal_new: {
+                building: 'personal_new',
+                street: 'personal_new street',
+            }
+        },
+        office: {
+            building: 'random',
+            street: 'some street'
+        }
+    }
+}
+
+let finalObj = {}
+const flattenObj = (obj, name) => {
+    for (let key in obj) {
+        if (typeof obj[key] === 'object') {
+            flattenObj(obj[key], name + '_' + key)
+        } else {
+            finalObj[name + '_' + key] = obj[key]
+        }
+    }
+    return finalObj
+}
+flattenObj(obj, 'user')
