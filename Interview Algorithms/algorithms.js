@@ -251,3 +251,21 @@ const flattenObj = (obj, name) => {
     return finalObj
 }
 flattenObj(obj, 'user')
+
+const substrChar = (str) => {
+    let longestStringLen = 0;
+    for (let i = 0; i <= str.length; i++) {
+        let currentStringSet = new Set();
+        for (let j = i; j < str.length; j++) {
+            if (currentStringSet.has(str[j])) {
+                break;
+            } else {
+                currentStringSet.add(str[j])
+            }
+        }
+        longestStringLen = Math.max(longestStringLen, currentStringSet.size);
+    }
+    return longestStringLen
+}
+substrChar("abacadae")
+substrChar("abcdaea")
